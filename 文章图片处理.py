@@ -46,7 +46,7 @@ def process_image(input_path, output_folder):
     output_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "output")
     os.makedirs(output_folder, exist_ok=True) 
     # 将图片存储为 png 格式，保存到 output 文件夹中
-    output_path = os.path.join(output_folder, f"output_{os.path.basename(input_path)}")
+    output_path = os.path.join(output_folder, f"output_{os.path.splitext(os.path.basename(input_path))[0]}.png")
     canvas.save(output_path, format='PNG')
     print(f"处理完成：{os.path.basename(output_path)}")
 

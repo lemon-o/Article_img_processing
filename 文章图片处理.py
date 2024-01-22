@@ -14,13 +14,13 @@ def process_all_images_in_folder(input_folder, output_folder):
 def process_image(input_path, output_folder):
     # 打开图片
     img = Image.open(input_path)
-    # 将图片宽度改为1200，高度随比例改变
-    target_width = 1200
+    # 将图片宽度改为840，高度随比例改变
+    target_width = 840
     w_percent = target_width / float(img.size[0])
     target_height = int(float(img.size[1]) * float(w_percent))
     img = img.resize((target_width, target_height), Image.LANCZOS)  # 或者使用 Image.BICUBIC
-    # 将画布大小改为：宽度=图片宽度+720 高度=图片高度+150
-    canvas_width = target_width + 720
+    # 将画布大小改为：宽度=图片宽度+172 高度=图片高度+150
+    canvas_width = target_width + 172
     canvas_height = target_height + 150
     canvas = Image.new('RGBA', (canvas_width, canvas_height), (0, 0, 0, 0))
     # 计算图片在画布中的位置
